@@ -18,8 +18,6 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const browserSync = require("browser-sync").create();
 
-
-const gulp = require('gulp');
 const ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
