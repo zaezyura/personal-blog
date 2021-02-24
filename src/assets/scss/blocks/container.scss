@@ -1,0 +1,10 @@
+.container {
+  max-width: 700px;
+  margin: 0 auto; // test
+  padding: 0 50px;
+
+  @include breakpoint($mobile-bp){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

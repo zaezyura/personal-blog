@@ -1,0 +1,42 @@
+.cabinet {
+    display: flex;
+
+    @include breakpoint($mobile-bp) {
+        flex-direction: column;
+
+    }
+}
+
+.cabinet-form {
+    width: 340px;
+
+    @include breakpoint($mobile-bp) {
+        order: 2;
+    }
+}
+
+.cabinet-avatar {
+    flex-grow: 1;
+    padding-left: 110px;
+    
+    img {
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    @include breakpoint($mobile-bp) {
+        order: 1;
+        padding-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.cabinet-file {
+    font-size: 14px;
+    color: $blue;
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+}
