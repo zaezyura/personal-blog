@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link
+          rel="stylesheet"
+          href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+          crossorigin="anonymous"
+        />
     
     <!-- Useful meta tags -->
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -61,12 +67,15 @@
                           <a class="nav-link" href="profile.html">Профиль</a>
                       </li>
                       <li>
-                          <a class="nav-link" href="#">Выйти</a>
+                          <a class="nav-link" href="index.html">Выйти</a>
                       </li>
                   </ul>
               </nav>
-              <form class="search" action="search.html" method="get">
+              <form class="search"  action="search.html">
                   <input class="search-input" type="text" placeholder="Поиск по блогу">
+                  <button type="submit" class="search-button">
+                      <i class="fas fa-search"></i>
+                  </button>
               </form>
           </div>
       </header>
@@ -79,7 +88,7 @@
       
           <div class="sidebar-content">
               <div class="profile">
-                  <img class="profile-avatar" src="https://placehold.it/100" alt="">
+                  <img class="profile-avatar" src="assets/images/avatar1.5.png" alt="">
                   <div class="profile-header">
                       <div class="profile-name">Sagura Yura</div>
                       <div class="profile-prof">блог front-end разработчика</div>
@@ -183,14 +192,14 @@
 
 
 <!-- Add post -->
-<div class="add-post">
-    <form class="add-post-form" action="/" method="POST">
+<div class="add-post" id="elem">
+    <form class="add-post-form" action="" method="post">
         <textarea class="add-post-textarea" name="post-text" placeholder="Напишите что-нибудь" data-autoresize></textarea>
         <div class="add-post-btn">
             <label class="add-post-file" for="add-post-file">
                 <input type="file" id="add-post-file">
             </label>
-            <button class="add-post-send" type="submit">
+            <button class="add-post-send" type="button">
                 <img src="assets/images/send.svg" alt="Отправить">
             </button>
         </div>
@@ -307,10 +316,10 @@
         <a class="pagination-link" href="">&lt;</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link" href="#">1</a>
+        <a class="pagination-link active" href="#">1</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link active" href="#">2</a>
+        <a class="pagination-link" href="#">2</a>
     </li>
     <li class="pagination-item"> 
         <a class="pagination-link" href="#">3</a>
