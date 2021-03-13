@@ -31,14 +31,14 @@ title: Home
 
 
 <!-- Add post -->
-<div class="add-post">
-    <form class="add-post-form" action="/" method="POST">
+<div class="add-post" id="elem">
+    <form class="add-post-form" action="" method="post">
         <textarea class="add-post-textarea" name="post-text" placeholder="Напишите что-нибудь" data-autoresize></textarea>
         <div class="add-post-btn">
             <label class="add-post-file" for="add-post-file">
                 <input type="file" id="add-post-file">
             </label>
-            <button class="add-post-send" type="submit">
+            <button class="add-post-send" type="button">
                 <img src="assets/images/send.svg" alt="Отправить">
             </button>
         </div>
@@ -155,10 +155,10 @@ title: Home
         <a class="pagination-link" href="">&lt;</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link" href="#">1</a>
+        <a class="pagination-link active" href="#">1</a>
     </li>
     <li class="pagination-item">
-        <a class="pagination-link active" href="#">2</a>
+        <a class="pagination-link" href="#">2</a>
     </li>
     <li class="pagination-item"> 
         <a class="pagination-link" href="#">3</a>

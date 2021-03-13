@@ -1,4 +1,6 @@
 .search {
+    position: relative;
+    display: flex;
     max-width: 210px;
     width: 100%;
     margin-left: 16px;
@@ -17,6 +19,22 @@
     &::placeholder {
         color: rgba($white, .4);
     }
+}
 
-    
+.search-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    z-index: 100;
+
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+
+    color: rgba($white, .4);
+    transition: color .2s linear;
+
+    &:hover {
+        color: $white;
+    }
 }
