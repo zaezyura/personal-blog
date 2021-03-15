@@ -415,7 +415,7 @@ a {
 .sidebar-footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 200px;
+  margin-top: 20px;
   padding: 0 20px; }
 
 .main {
@@ -524,7 +524,7 @@ a {
   justify-content: center; }
   @media (max-width: 991px) {
     .social {
-      display: none; } }
+      justify-content: space-around; } }
 
 .social-item {
   margin: 7.5px; }
