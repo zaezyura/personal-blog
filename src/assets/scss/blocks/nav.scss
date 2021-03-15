@@ -45,6 +45,11 @@
     }
 }
 
+.nav-item-sign {
+    display: flex;
+    justify-content: space-between;
+}
+
 .nav-link {
     display: block;
     width: 100%;
