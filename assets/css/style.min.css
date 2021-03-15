@@ -388,7 +388,7 @@ a {
       display: flex;
       flex-direction: column;
       height: calc(100vh - 40px);
-      padding-bottom: 45px;
+      padding-bottom: 15px;
       overflow: auto;
       top: 40px;
       transform: translateX(-100%);
@@ -411,13 +411,11 @@ a {
 .sidebar-content {
   padding: 0 20px;
   margin-top: -50px; }
-  @media (max-width: 991px) {
-    .sidebar-content {
-      flex-grow: 1; } }
 
 .sidebar-footer {
   display: flex;
   justify-content: space-between;
+  margin-top: 200px;
   padding: 0 20px; }
 
 .main {
