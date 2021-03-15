@@ -652,6 +652,7 @@ a:hover {
 }
 
 .social {
+    margin-top: 10px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -845,6 +846,7 @@ a:hover {
 }
 
 .search-button {
+    display: inline-block;
     position: absolute;
     top: 50%;
     right: 10px;

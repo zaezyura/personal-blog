@@ -388,7 +388,7 @@ a {
       display: flex;
       flex-direction: column;
       height: calc(100vh - 40px);
-      padding-bottom: 15px;
+      padding-bottom: 45px;
       overflow: auto;
       top: 40px;
       transform: translateX(-100%);
@@ -589,6 +589,10 @@ a {
     .nav-item:hover .nav-link {
       background: none;
       color: #107EFF; } }
+
+.nav-item-sign {
+  display: flex;
+  justify-content: space-between; }
 
 .nav-link {
   display: block;
