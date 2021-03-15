@@ -87,7 +87,7 @@
     }
 
     h3 {
-        font-size: 12.5px;
+        font-size: 14.5px;
     }
 
     h4{
@@ -117,9 +117,14 @@
     }
 
     img {
+        margin-bottom: 20px;
         display: block;
         max-width: 100%;
         height: auto;
+    }
+
+    code {
+        color: #266f81;
     }
     
 }

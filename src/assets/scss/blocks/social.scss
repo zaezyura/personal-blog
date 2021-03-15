@@ -4,7 +4,7 @@
     justify-content: center;
 
     @include breakpoint($tablet-bp) {
-        display: none;   
+       justify-content: space-around;
     }
 }
 
