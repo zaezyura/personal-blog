@@ -1,0 +1,176 @@
+---
+layout: default
+title: Post2
+---
+
+
+<article class="post">
+    <div class="post-actions">
+        <a href="index.html">повернутися назад</a>
+        <a data-modal="share-modal" href="#">
+            поділитися <img class="post-actions-icon" src="assets/images/share.svg" alt="поделиться">
+        </a>
+    </div>
+    <div class="post-header">
+        <h2 class="post-title post-title--mb0">
+            Способи спрощення обробників подій
+        </h2>
+        <ul class="post-data">
+            <li class="post-data-item">
+                <time datetime="2020-06-21 19:20">21.06.2020</t>
+            </li>
+            <li class="post-data-item">
+                <a href="#">створення сайтів</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="post-content">
+        <div class="post-text">
+            <p>Ми маємо справу з обробниками подій щоразу, коли користувач клікає на певний елемент, створює фокус клавіатурою чи вводить текст в поле форми. Дуже важливо не перевантажувати обробники зайвим кодом і, власне, не створювати зайвих обробників.</p>
+
+            <p>Почнемо з простого прикладу: декількох елементів з властивістю <code>draggable="true"</code> . Ми хочемо сповістити користувача про колір елемента, який вони перетягують:</p>
+
+            <img src="assets/images/post2/1.png" alt="">
+            
+            <h3>Інтуїтивний спосіб</h3>
+            
+            <p>Якщо ви тільки почали вивчення JavaScript, то, імовірно, створили б по обробнику для кожного елемента. Це поширений підхід, адже він найбільш очевидний. Нам потрібна особлива поведінка для кожного елемента, тому створюємо окремі обробники:</p>
+            
+            <img src="assets/images/post2/2.png" alt="">
+            
+            <h3>Забираємо повторюваний код</h3>
+            
+            <p>Можна помітити, що всі обробники дуже схожі за поведінкою: кожна функція виводить певний текст. Винесемо спільний код до однієї допоміжної функції:</p>
+            
+            <img src="assets/images/post2/3.png" alt="">
+            
+            <h3>Переваги об'єкта <code>Event</code></h3>
+            
+            <p>Об'єкт <code>Event</code> — основний помічник у спрощенні слухачів. При виклику обробника події першим аргументом передається об'єкт <code>Event</code>. Він містить деякі дані для опису події, що виникла, на зразок часу її виникнення.</p>
+            
+            <p>Щоб спростити наш код, ми можемо використати властивість <code>evt.currentTarget</code>, де <code>currentTarget</code> посилається на елемент, саме до якого і приєднаний слухач. В нашому прикладі це буде один з кольорових блоків.</p>
+            
+            <img src="assets/images/post2/4.png" alt="">
+            
+            <p>Отримали одну функцію замість чотирьох. Ми можемо повторно використовувати ту саму функцію як обробника подій, а <code>evt.currentTarget.id</code> отримуватиме різні значення: залежно від елемента, який викликав подію.</p>
+            
+            <h3>Як щодо події <code>click</code></h3>
+            
+            <p><code>evt.target</code> добре працює в подіях на зразок dragstart та change, де ми маємо справу лише з невеликим числом елементів, які отримують фокус чи змінюють інпут.</p>
+            
+            <p>Зазвичай нам треба якось реагувати на кліки користувача, тому зупинимось на події <code>click</code> детальніше. Ви можете обробляти <code>click</code> для будь-якого елемента в документі: від великих <code>div</code> до невеличких <code>span</code>.</p>
+            
+            <p>Зробимо так, щоб draggable-блоки тепер реагували на подію <code>click</code>.</p>
+            
+            <img src="assets/images/post2/5.png" alt="">
+            <img src="assets/images/post2/6.png" alt="">
+            
+            <p>Якщо ви тестуватимете цей код, зверніть увагу, що іноді назва кольору не приєднується до рядка Clicked при кліку на блок. Усе тому, що кожен блок містить <code>&lt;span&gt;</code>, який обробляє клік замість нашого draggable-елементу <code>&lt;div&gt;</code>. Оскільки у <code>&lt;span&gt;</code> не визначено id, властивість <code>evt.target.id</code> поверне пустий рядок.</p>
+            
+            <p>Однак нас турбують все ж таки кольорові блоки. Оскільки ми клікаємо десь всередині блоку, нам необхідно знайти батьківський елемент. Для цього використаємо <code>element.closest()</code>, щоб знайти  батьківський елемент, найближчий до обраного.</p>
+            
+            <img src="assets/images/post2/7.png" alt="">    
+
+            <p>Тепер можемо використовувати одного слухача для подій <code>click</code>. Якщо <code>element.closest()</code> повертає <code>null</code>, то ми натиснули десь за межами кольорового елемента, тому ігноруємо таку подію.</p>
+
+        </div> <!-- /.post-text -->
+
+        <div class="related">
+            <h3 class="post-subtitle">Цікаво почитати</h3>
+
+            <ul class="related-list">
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="post1.html">Grid vs Flexbox: що обрати?</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item" id="title">
+                    <h4 class="related-list-title">
+                        <a href="post3.html"> Як створити форму валідації в HTML5?</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="works.html"> Мої роботи</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="post4.html"> Купив новий нотубук за 33 000 грн. на що здатне нове покоління відеокарт nvidia?</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+            </ul>
+        </div> <!-- /.related -->
+
+
+        <h3 class="post-subtitle">Обговорення</h3>
+        
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <textarea class="form-control form-control--textarea" name="comment-text" placeholder="Текст коментаря" data-autoresize></textarea>
+                    <span class="form-line"></span>
+                </div>
+                <button class="btn btn--blue btn--rounded btn--sm" type="submit">Надіслати</button>
+            </form>
+
+            <ul class="comments">
+                <li class="comments-item">
+                    <div class="comments-header">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
+
+                        <div class="comments-author">
+                            <div class="comments-name">Марк</div>
+                            <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                        </div>
+                    </div>
+                    <div class="comments-text">
+                        Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+                    </div>
+                    <button class="comments-reply" type="button">відповісти</button>
+
+                    <ul class="comments">
+                        <li class="comments-item">
+                            <div class="comments-header">
+                                <img class="comments-avatar" src="assets/images/post1/avatar2.png" alt="">
+        
+                                <div class="comments-author">
+                                    <div class="comments-name">Джонні</div>
+                                    <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                                </div>
+                            </div>
+                            <div class="comments-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aut tenetur vero magni cum vel pariatur ducimus eaque veniam qui sint, esse omnis, recusandae ratione nobis suscipit nulla rem iste?
+                            </div>
+                            <button class="comments-reply" type="button">відповісти</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="comments-item">
+                    <div class="comments-header">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
+
+                        <div class="comments-author">
+                            <div class="comments-name">Марк</div>
+                            <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                        </div>
+                    </div>
+                    <div class="comments-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aut tenetur vero magni cum vel pariatur ducimus eaque veniam qui sint, esse omnis, recusandae ratione nobis suscipit nulla rem iste?
+                    </div>
+                    <button class="comments-reply" type="button">відповісти</button>
+                </li>
+            </ul>
+
+           
+
+
+    </div> <!-- /.post-content -->
+
+    <!-- <script src="assets/js/truncate.js">truncate(related, 10);</script> -->
+    
+</article> <!-- /.post -->

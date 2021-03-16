@@ -83,7 +83,7 @@
     }
 
     h2 {
-        font-size: 20px;
+        font-size: 24px;
     }
 
     h3 {
@@ -205,4 +205,14 @@
 
 .post-actions-icon {
     margin-left: 7px;
+}
+
+.post-list:before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 15px 0 14px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
 }

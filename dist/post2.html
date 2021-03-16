@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="">
     
-    <title>Post1</title>
+    <title>Post2</title>
   </head>
   <body>
 
@@ -36,18 +36,18 @@
       
                           <ul class="subnav">
                               <li>
-                                  <a class="subnav-link" href="#">Grid vs Flexbox: що обрати?</a>
+                                  <a class="subnav-link" href="post1.html">Grid vs Flexbox: що обрати?</a>
                               </li>
                               <li>
-                                  <a class="subnav-link"  href="#">Інтернет-маркетинг</a>
+                                  <a class="subnav-link"  href="post2.html">Способи спрощення обробників подій</a>
                               </li>
                               <li>
-                                  <a class="subnav-link"  href="#">Просування відео</a>
+                                  <a class="subnav-link"  href="post3.html">Як створити форму валідації в HTML5?</a>
                               </li>
                           </ul>
                       </li>
                       <li>
-                          <a class="nav-link" href="text.html">Про мене</a>
+                          <a class="nav-link" href="aboutme.html">Про мене</a>
                       </li>
                       <li>
                           <a class="nav-link" href="profile.html">Профіль</a>
@@ -129,18 +129,18 @@
       
                           <ul class="subnav">
                               <li>
-                                  <a class="subnav-link" href="#">Створення сайтів</a>
+                                  <a class="subnav-link" href="post1.html">Grid vs Flexbox: що обрати?</a>
                               </li>
                               <li>
-                                  <a class="subnav-link"  href="#">Інтернет-маркетинг</a>
+                                  <a class="subnav-link"  href="post2.html">Способи спрощення обробників подій</a>
                               </li>
                               <li>
-                                  <a class="subnav-link"  href="#">Просування видео</a>
+                                  <a class="subnav-link"  href="post3.html"> Як створити форму валідації в HTML5?</a>
                               </li>
                           </ul>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="text.html">Про мне</a>
+                          <a class="nav-link" href="aboutme.html">Про мне</a>
                       </li>
                       <li class="nav-item">
                           <a class="nav-link" href="profile.html">Профіль</a>
@@ -174,7 +174,7 @@
     </div>
     <div class="post-header">
         <h2 class="post-title post-title--mb0">
-            Grid vs Flexbox: що обрати?
+            Способи спрощення обробників подій
         </h2>
         <ul class="post-data">
             <li class="post-data-item">
@@ -188,85 +188,52 @@
     </div>
     <div class="post-content">
         <div class="post-text">
-            <p>Попри деякі спільні риси, CSS Grid та CSS Flexbox використовуються для дуже різних завдань; кожна з цих технологій вирішує свій набір проблем.</p>
+            <p>Ми маємо справу з обробниками подій щоразу, коли користувач клікає на певний елемент, створює фокус клавіатурою чи вводить текст в поле форми. Дуже важливо не перевантажувати обробники зайвим кодом і, власне, не створювати зайвих обробників.</p>
 
-            <p>У статті ми розглянемо відмінності між цими техніками, дослідимо, як вони допомагають вирішувати різні проблеми макетів, а також оберемо технологію, яка найкраще підходить вам.
-            </p>
+            <p>Почнемо з простого прикладу: декількох елементів з властивістю <code>draggable="true"</code> . Ми хочемо сповістити користувача про колір елемента, який вони перетягують:</p>
 
-            <h3>Grid базується на контейнерах, Flexbox – на вмісті</h3>
-
-            <p>У макеті Flexbox розмір комірки (flex-елемент) визначається всередині, а у Grid розмір комірки (grid-елемент) визначається в grid-контейнері.</p>
-            <p>Збиває з пантелику?</p>
-            <p>Розглянемо приклад: HTML для створення рядку елементів.</p>
-
-            <img src="assets/images/post1/1.png" alt="">
+            <img src="assets/images/post2/1.png" alt="">
             
-            <p>Додамо трохи стилів з Flexbox:</p>
+            <h3>Інтуїтивний спосіб</h3>
             
-            <img src="assets/images/post1/2.png" alt="">
-
-            <p>Ми визначили розмір комірок всередині flex-елементу встановивши <code>flex: 1 1 auto;</code>. Властивість <code>flex</code> є скороченням від <code>flex-grow</code>, <code>flex-shrink</code> та <code>flex-basis</code>. Значення за замовчуванням <code>0 1 auto</code>. Зверніть увагу, що <code>div row</code> є flex-контейнером, тому ми не встановлюємо розмір елементів там. Ми встановлюємо розмір всередині flex-елемента.</p>
-
-            <p>При попередньому перегляді в браузері, побачимо рядок контейнерів, як і очікувалось:</p>
-           
-            <img src="assets/images/post1/3.png" alt="">
+            <p>Якщо ви тільки почали вивчення JavaScript, то, імовірно, створили б по обробнику для кожного елемента. Це поширений підхід, адже він найбільш очевидний. Нам потрібна особлива поведінка для кожного елемента, тому створюємо окремі обробники:</p>
             
-            <p>Тепер подивимось як отримати такий самий результат з Grid:</p>
+            <img src="assets/images/post2/2.png" alt="">
             
-            <img src="assets/images/post1/4.png" alt="">
+            <h3>Забираємо повторюваний код</h3>
             
-            <p>Наведений код працюватиме так само.</p>
-
-            <p>Тепер ми визначаємо розмір комірки, використовуючи <code>grid-template-columns</code> всередині grid-контейнера <code>row</code>, а не grid-елемента.</p>
-
-            <p>Зверніть увагу, що flexbox макет обчислюється <em>після</em> того, як вміст завантажено, тоді як макет grid обчислюється незалежно від вмісту. Тому, якщо можливо, уникайте використання flexbox для створення загального макета вашого сайту.</p>
+            <p>Можна помітити, що всі обробники дуже схожі за поведінкою: кожна функція виводить певний текст. Винесемо спільний код до однієї допоміжної функції:</p>
             
-            <h2 >Grid має властивість <code>gap</code>, а Flexbox ні</h2>
+            <img src="assets/images/post2/3.png" alt="">
             
-            <p>Ви скажете, що Flexbox і Grid відрізняються тим, що в Grid ми можемо створювати прогалини між елементами з <code>grid-column-gap</code> :</p>
+            <h3>Переваги об'єкта <code>Event</code></h3>
             
-            <img src="assets/images/post1/5.png" alt="">
+            <p>Об'єкт <code>Event</code> — основний помічник у спрощенні слухачів. При виклику обробника події першим аргументом передається об'єкт <code>Event</code>. Він містить деякі дані для опису події, що виникла, на зразок часу її виникнення.</p>
             
-            <p>Для такого ж результату у Flexbox треба буде використовувати <code>padding</code> та вкладені контейнери або збільшити ширину flex-контейнера та використати властивість <code>justify-content</code> для розповсюдження flex-елементів.</p>
+            <p>Щоб спростити наш код, ми можемо використати властивість <code>evt.currentTarget</code>, де <code>currentTarget</code> посилається на елемент, саме до якого і приєднаний слухач. В нашому прикладі це буде один з кольорових блоків.</p>
+            
+            <img src="assets/images/post2/4.png" alt="">
+            
+            <p>Отримали одну функцію замість чотирьох. Ми можемо повторно використовувати ту саму функцію як обробника подій, а <code>evt.currentTarget.id</code> отримуватиме різні значення: залежно від елемента, який викликав подію.</p>
+            
+            <h3>Як щодо події <code>click</code></h3>
+            
+            <p><code>evt.target</code> добре працює в подіях на зразок dragstart та change, де ми маємо справу лише з невеликим числом елементів, які отримують фокус чи змінюють інпут.</p>
+            
+            <p>Зазвичай нам треба якось реагувати на кліки користувача, тому зупинимось на події <code>click</code> детальніше. Ви можете обробляти <code>click</code> для будь-якого елемента в документі: від великих <code>div</code> до невеличких <code>span</code>.</p>
+            
+            <p>Зробимо так, щоб draggable-блоки тепер реагували на подію <code>click</code>.</p>
+            
+            <img src="assets/images/post2/5.png" alt="">
+            <img src="assets/images/post2/6.png" alt="">
+            
+            <p>Якщо ви тестуватимете цей код, зверніть увагу, що іноді назва кольору не приєднується до рядка Clicked при кліку на блок. Усе тому, що кожен блок містить <code>&lt;span&gt;</code>, який обробляє клік замість нашого draggable-елементу <code>&lt;div&gt;</code>. Оскільки у <code>&lt;span&gt;</code> не визначено id, властивість <code>evt.target.id</code> поверне пустий рядок.</p>
+            
+            <p>Однак нас турбують все ж таки кольорові блоки. Оскільки ми клікаємо десь всередині блоку, нам необхідно знайти батьківський елемент. Для цього використаємо <code>element.closest()</code>, щоб знайти  батьківський елемент, найближчий до обраного.</p>
+            
+            <img src="assets/images/post2/7.png" alt="">    
 
-            <p>Нам треба шукати альтернативу Flexbox, тому що він не має властивості <code>gap</code>. Однак, вона вже очікується. <a href="https://www.w3.org/TR/css-align-3/" target="_blank">CSS Box Alignment Module 3</a> має CSS фічі, що стосуються вирівнювання контейнерів у всіх моделях макетів: <code>block</code>, <code>table</code>, <code>flex</code> та <code>grid</code>. Модуль Box Alignment поєднує властивості flexbox, grid та multi-column, які можуть використовуватись послідовно.
-            У майбутньому ми зможемо додати прогалини з властивостями <code>row-gap</code> та <code>column-gap</code>.</p>
-
-            <h2>Flexbox – одновимірний, Grid – двовимірний</h2>
-
-            <p>Ми організовуємо елементи як рядки та колонки, тому що для макета використовувались таблиці. Flexbox та Grid базуються на цій концепції. Flexbox краще підходить для розміщення елементів в одному рядку або в одному стовпці. З Grid краще організовувати елементи в декількох рядках і стовпцях.</p>
-            <p>Іншими словами, Flexbox є одновимірним, а Grid – двовимірним. Розглянемо поширений варіант використання одновимірного макета — кнопки соціальних мереж.</p>
-
-            <p><strong>Іншими словами, Flexbox є одновимірним, а Grid – двовимірним.</strong> Розглянемо поширений варіант використання одновимірного макета — кнопки соціальних мереж.</p>
-
-            <img src="assets/images/post1/6.png" alt="">
-
-            <p>Всі елементи знаходяться в одному рядку. Ми можемо реалізувати це з Flexbox так:</p>
-
-            <img src="assets/images/post1/7.png" alt="">
-
-            <p>Властивість <code>justify-content</code> визначає як розподілятиметься додатковий простір flex-контейнера між flex-елементами. Значення <code>space-around</code> розподіляє простір так, що flex-елементи розміщуються рівномірно, з однаковою кількістю простору навколо них.</p>
-
-            <p>Поглянемо на поширений приклад двовимірного макета:</p>
-
-            <img src="assets/images/post1/8.png" alt="">
-
-            <p>Ми не можемо реалізувати такий макет одним рядком чи колонкою — нам необхідно декілька рядків та колонок. Саме тому прийшов час CSS Grid.</p>
-
-            <img src="assets/images/post1/9.png" alt="">
-
-            <p>CSS:</p>
-
-            <img src="assets/images/post1/10.png" alt="">
-
-            <p>Ми створюємо дві колонки з властивістю <code>grid-template-columns</code>, а три рядки — з властивістю <code>grid-template-rows</code>. Функція <code>repeat()</code> створює три рядки з автоматичною висотою.</p>
-
-            <p>Потім у grid-елементах (<code>header</code>, <code>main</code>, <code>aside</code>, <code>footer</code>) ми визначаємо скільки місця вони займатимуть, використовуючи властивість <code>grid-area</code>.</p>
-
-            <h3>Чи стане Flexbox застарілим у порівнянні з Grid у майбутньому?</h3>
-            <p>Абсолютно ні.</p>
-            <p>Про це і була стаття. CSS Grid та Flexbox покликані вирішувати різний набір проблем.</p>
-            <p>На даний момент CSS Grid не має достатньої підтримки в браузерах, щоб створювати веб-сайти для production. Я керуюсь таким правилом: якщо ця фіча охопила понад 95% світового використання, я використовую її в реальних завданнях. Наразі Flexbox охоплює 95% світового використання, а Grid – 87%.</p>
+            <p>Тепер можемо використовувати одного слухача для подій <code>click</code>. Якщо <code>element.closest()</code> повертає <code>null</code>, то ми натиснули десь за межами кольорового елемента, тому ігноруємо таку подію.</p>
 
         </div> <!-- /.post-text -->
 
@@ -276,25 +243,25 @@
             <ul class="related-list">
                 <li class="related-list-item">
                     <h4 class="related-list-title">
-                        <a href="#">Як я відвідав FrontEnd conf 2021 і дізнався про нові технології</a>
+                        <a href="post1.html">Grid vs Flexbox: що обрати?</a>
                     </h4>
                         <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
                 </li>
                 <li class="related-list-item" id="title">
                     <h4 class="related-list-title">
-                        <a href="#">Як я відвідав FrontEnd Conf 2021 f</a>
+                        <a href="post3.html"> Як створити форму валідації в HTML5?</a>
                     </h4>
                         <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
                 </li>
                 <li class="related-list-item">
                     <h4 class="related-list-title">
-                        <a href="#"> Купив новий нотубук за 33 000 грн</a>
+                        <a href="works.html"> Мої роботи</a>
                     </h4>
                         <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
                 </li>
                 <li class="related-list-item">
                     <h4 class="related-list-title">
-                        <a href="#"> Купив новий нотубук за 33 000 грн. Відеогляд можливостей</a>
+                        <a href="post4.html"> Купив новий нотубук за 33 000 грн. на що здатне нове покоління відеокарт nvidia?</a>
                     </h4>
                         <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
                 </li>
@@ -315,10 +282,10 @@
             <ul class="comments">
                 <li class="comments-item">
                     <div class="comments-header">
-                        <img class="comments-avatar" src="https://placehold.it/30" alt="">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
 
                         <div class="comments-author">
-                            <div class="comments-name">Юра Сагура</div>
+                            <div class="comments-name">Марк</div>
                             <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
                         </div>
                     </div>
@@ -330,7 +297,7 @@
                     <ul class="comments">
                         <li class="comments-item">
                             <div class="comments-header">
-                                <img class="comments-avatar" src="assets/images/avatar2.png" alt="">
+                                <img class="comments-avatar" src="assets/images/post1/avatar2.png" alt="">
         
                                 <div class="comments-author">
                                     <div class="comments-name">Джонні</div>
@@ -346,10 +313,10 @@
                 </li>
                 <li class="comments-item">
                     <div class="comments-header">
-                        <img class="comments-avatar" src="https://placehold.it/30" alt="">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
 
                         <div class="comments-author">
-                            <div class="comments-name">Юра Сагура</div>
+                            <div class="comments-name">Марк</div>
                             <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
                         </div>
                     </div>
