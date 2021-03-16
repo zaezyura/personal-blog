@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="">
     
-    <title>Signin</title>
+    <title>Post4</title>
   </head>
   <body>
 
@@ -165,33 +165,134 @@
       <main class="main">
         <div class="container">
 
-<h1 class="page-title page-title--center">Вхід</h1>
-
-<form class="form form--auth" action="/" method="POST">
-
-    <div class="form-group">
-        <input class="form-control" type="email" placeholder="Ваш e-mail">
-        <span class="form-line"></span>
+<article class="post">
+    <div class="post-actions">
+        <a href="index.html">повернутися назад</a>
+        <a href="#" data-modal="share-modal">
+            поділитися <img class="post-actions-icon" src="assets/images/share.svg" alt="поделиться">
+        </a>
     </div>
+    <div class="post-header">
+        <h2 class="post-title post-title--mb0">
+            Купив новий нотубук за 33 000 грн. на що здатне нове покоління відеокарт nvidia?
+        </h2>
 
-    <div class="form-group">
-        <input class="form-control" type="password" placeholder="Введіть пароль">
-        <span class="form-line"></span>
     </div>
+    <div class="post-content">
+        <div class="post-text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ut voluptate modi, aliquam voluptas commodi similique porro eligendi? Quasi molestiae molestias omnis sequi cumque, at eveniet dolorum assumenda repudiandae quibusdam?</p>
 
-    <div class="form-footer form-footer--center">
-        <button class="btn btn--blue btn--rounded btn--sm">Увійти</button>
-        <ul class="form-footer-list">
-            <li>
-                <a href="signup.html">реєстрація</a>
-            </li>
-            <li>
-                <a href="reset.html">відновити</a>
-            </li>
-        </ul>
-    </div>
+            <p>Lorem <a href="#">ipsum dolor sit amet </a> consectetur adipisicing elit. Perspiciatis ut voluptate modi, aliquam voluptas commodi similique porro eligendi? Quasi molestiae molestias omnis sequi cumque, at eveniet dolorum assumenda repudiandae quibusdam?</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ut voluptate modi, aliquam voluptas commodi similique porro eligendi? Quasi molestiae molestias omnis sequi cumque, at eveniet dolorum assumenda repudiandae quibusdam?</p>
+
+            <p>
+                <span class="fr-video">
+                    <iframe src="https://www.youtube.com/embed/YsIPpEHBkKs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </span>
+            </p>
+        </div> <!-- /.post-text -->
+
+    </div> <!-- /.post-content -->
+
+        <div class="related">
+            <h3 class="post-subtitle">Цікаво почитати</h3>
+
+            <ul class="related-list">
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="post1.html">Grid vs Flexbox: що обрати?</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item" id="title">
+                    <h4 class="related-list-title">
+                        <a href="post3.html">Як створити форму валідації в HTML5?</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="post2.html"> Способи спрощення обробників подій</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+                <li class="related-list-item">
+                    <h4 class="related-list-title">
+                        <a href="works.html"> Мої роботи</a>
+                    </h4>
+                        <time class="related-list-date" datetime="2020-06-21 19:21">21.06.2020</time>
+                </li>
+            </ul>
+        </div> <!-- /.related -->
+
+
+        <h3 class="post-subtitle">Обговорення</h3>
+        
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <textarea class="form-control form-control--textarea" name="comment-text" placeholder="Текст коментаря" data-autoresize></textarea>
+                    <span class="form-line"></span>
+                </div>
+                <button class="btn btn--blue btn--rounded btn--sm" type="submit">Надіслати</button>
+            </form>
+
+            <ul class="comments">
+                <li class="comments-item">
+                    <div class="comments-header">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
+
+                        <div class="comments-author">
+                            <div class="comments-name">Марк</div>
+                            <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                        </div>
+                    </div>
+                    <div class="comments-text">
+                        Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+                    </div>
+                    <button class="comments-reply" type="button">відповісти</button>
+
+                    <ul class="comments">
+                        <li class="comments-item">
+                            <div class="comments-header">
+                                <img class="comments-avatar" src="assets/images/post1/avatar2.png" alt="">
+        
+                                <div class="comments-author">
+                                    <div class="comments-name">Джонні</div>
+                                    <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                                </div>
+                            </div>
+                            <div class="comments-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aut tenetur vero magni cum vel pariatur ducimus eaque veniam qui sint, esse omnis, recusandae ratione nobis suscipit nulla rem iste?
+                            </div>
+                            <button class="comments-reply" type="button">відповісти</button>
+                        </li>
+                    </ul>
+                </li>
+                <li class="comments-item">
+                    <div class="comments-header">
+                        <img class="comments-avatar" src="assets/images/post1/avatar1.png" alt="">
+
+                        <div class="comments-author">
+                            <div class="comments-name">Марк</div>
+                            <time class="comments-pubdate" datetime="2020-12-21 19:21">1 неділю тому</time>
+                        </div>
+                    </div>
+                    <div class="comments-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aut tenetur vero magni cum vel pariatur ducimus eaque veniam qui sint, esse omnis, recusandae ratione nobis suscipit nulla rem iste?
+                    </div>
+                    <button class="comments-reply" type="button">відповісти</button>
+                </li>
+            </ul>
+
+           
+
+
+    </div> <!-- /.post-content -->
+
+    <!-- <script src="assets/js/truncate.js">truncate(related, 10);</script> -->
     
-</form>
+</article> <!-- /.post -->
 </div>
       </main>
     </div>
