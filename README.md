@@ -1,3 +1,3 @@
 # Адаптивна верстка багатосторінкового сайту з використанням збирача Gulp і препроцесcора SASS.
-**Посилання на сайт:**  <https://zaezyura.github.io/personal-blog/>
+**Посилання на сайт:** <https://zaezyura.github.io/personal-blog/>
 
